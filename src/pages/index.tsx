@@ -16,14 +16,26 @@ export default function Home(initialData: any) {
             </Head>
 
             <h1>Gabo's Giphy Search App</h1>
+
+            <div className="giphy-search-results-grid">
+                {initialData.catGiphys.data.map((each, index) => {
+                    return (
+                        <div key={index}>
+                            <h3>{each.title}</h3>
+                            <img src={each.images.original.url} alt={each.title}/>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
 
 export async function getStaticProps() {
-    let catGiphys = await fetch('https://api.giphy.com/v1/gifs/search?q=cats&api_key=process.env.GIPHY_API_KEY&limit=10');
+    const apiKey = process.env.GIPHY_API_KEY
+    let catGiphys = await fetch(`https://api.giphy.com/v1/gifs/search?q=cats&api_key=${apiKey}&limit=10`);
     catGiphys = await catGiphys.json();
     return {
-        props: {cat: catGiphys}
+        props: {catGiphys: catGiphys}
     }
 }
