@@ -1,10 +1,22 @@
 import Head from 'next/head'
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 export default function Home(initialData: any) {
+    const [formInputs, setFormInputs] = useState({});
+
     useEffect(() => {
         console.log(initialData);
     })
+
+    const handleInputs  = (event: any) => {
+        let {name, value} = event.target;
+        setFormInputs({...formInputs, [name]: value});
+    }
+
+    const handleSubmit  = (event: any) => {
+        event.preventDefault();
+        console.log(formInputs.searchTerm);
+    }
 
     return (
         <div className='container'>
@@ -16,6 +28,11 @@ export default function Home(initialData: any) {
             </Head>
 
             <h1>Gabo's Giphy Search App</h1>
+
+            <form onSubmit={handleSubmit}>
+                <input name="searchTerm" onChange={handleInputs} required type="text" />
+                <button>Search</button>
+            </form>
 
             <div className="giphy-search-results-grid">
                 {initialData.catGiphys.data.map((each, index) => {
