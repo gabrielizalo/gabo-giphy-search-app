@@ -15,9 +15,9 @@ export default function About () {
 
             <p>Some people may work better with words, others with numbers, but everyone gets pictures. 90% of information transmitted to the human brain is visual.</p>
 
-            <p>The old saying "a picture is worth a thousand words" is quite cliche. But that doesn't make it any less true, especially in marketing and particularly in the instant-gratification, short attention span world we live in today. Getting folks to retain (or even register) your messages and content or take action is harder than ever, especially if all you are giving them is words.</p>
+            <p>The old saying &quot;a picture is worth a thousand words&quot; is quite cliche. But that doesn&apos;t make it any less true, especially in marketing and particularly in the instant-gratification, short attention span world we live in today. Getting folks to retain (or even register) your messages and content or take action is harder than ever, especially if all you are giving them is words.</p>
 
-            <p>Images are stronger than words. However, the fast-moving nature of GIFs make them stronger than images and their shorter length make them more digestible than video. That's the short answer.</p>
+            <p>Images are stronger than words. However, the fast-moving nature of GIFs make them stronger than images and their shorter length make them more digestible than video. That&apos;s the short answer.</p>
         </div>
     )
 }
