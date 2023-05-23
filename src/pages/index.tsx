@@ -23,7 +23,7 @@ export default function Home(initialData: any) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const apiKey = process.env.NEXT_PUBLIC_GIPHY_API_KEY
-        let giphys = await fetch(`https://api.giphy.com/v1/gifs/search?q=${formInputs.searchTerm}&api_key=${apiKey}&limit=10`);
+        let giphys = await fetch(`https://api.giphy.com/v1/gifs/search?q=${formInputs.searchTerm}&api_key=${apiKey}&limit=9`);
         giphys = await giphys.json();
         console.log("giphys: ", giphys);
         setSearchTerm(formInputs.searchTerm);
@@ -62,7 +62,7 @@ export default function Home(initialData: any) {
 
 export async function getStaticProps() {
     const apiKey = process.env.GIPHY_API_KEY
-    let catGiphys = await fetch(`https://api.giphy.com/v1/gifs/search?q=cats&api_key=${apiKey}&limit=10`);
+    let catGiphys = await fetch(`https://api.giphy.com/v1/gifs/search?q=cats&api_key=${apiKey}&limit=9`);
     catGiphys = await catGiphys.json();
     return {
         props: {catGiphys: catGiphys}
