@@ -53,3 +53,9 @@ input:focus {
   grid-template-columns: 1fr 1fr 4fr;
   margin-top: 40px;
 }
+
+.logo-container {
+  margin: auto;
+  max-width: 480px;
+  padding: 40px 0;
+}

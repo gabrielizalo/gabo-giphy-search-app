@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Image from 'next/image';
 import Link from "next/link";
 import {useEffect, useState} from "react";
 
@@ -41,6 +42,9 @@ export default function Home(initialData: any) {
                 </Head>
 
                 <h1>Gabo&apos;s Giphy Search App</h1>
+                <div className="logo-container">
+                    <Image src="/logo.gif" alt="Gabo&apos;s Giphy Search App" width={480} height={270}/>
+                </div>
 
                 <form onSubmit={handleSubmit}>
                     <input name="searchTerm" onChange={handleInputs} required type="text"/>
