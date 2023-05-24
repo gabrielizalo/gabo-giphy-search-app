@@ -6,16 +6,23 @@ import Footer from "../../components/common/footer/footer";
 
 export default function Search(initialData) {
     const router = useRouter();
+    const userSearchTerm = (router.query.searchTerm as string).trim();
+    const metaDescription = userSearchTerm.length > 0
+        && initialData?.giphys
+        && initialData.giphys.length > 0
+        && initialData.giphys.map((each, index) => each.title + " ");
     return (
         <>
             <div className="container">
                 <Head>
-                    <title>Search</title>
+                    <title>Search results for {userSearchTerm}</title>
+                    <meta name="description" content={metaDescription}></meta>
+
                     <link rel="icon" href="/favicon.ico"/>
                     <link rel="stylesheet" href="/styles.css"/>
                 </Head>
                 <p>Go <Link href="/">home</Link></p>
-                <h1>Search results for: {router.query.searchTerm}</h1>
+                <h1>Search results for: {userSearchTerm}</h1>
                 <div className="giphy-search-results-grid">
                     {
                         initialData?.giphys && initialData.giphys.length > 0 && initialData.giphys.map((each, index) => {
