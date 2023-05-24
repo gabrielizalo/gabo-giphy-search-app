@@ -1,48 +1,55 @@
 body {
-    color: rgb(85, 85, 85);
-    font-family: sans-serif;
-    text-align: center;
+  color: rgb(85, 85, 85);
+  font-family: sans-serif;
+  text-align: center;
 }
 
 .container {
-    margin: auto;
-    max-width: 1200px;
-    padding: 0 40px;
+  margin: auto;
+  max-width: 1200px;
+  padding: 0 40px;
 }
 
 .giphy-search-results-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 form {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: 5fr 1fr;
-    height: 40px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 5fr 1fr;
+  height: 40px;
 }
 
 button {
-    background-color: blueviolet;
-    border: 0;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
+  background-color: blueviolet;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
 }
 
 button:focus {
-    outline: 0;
+  outline: 0;
 }
 
 input {
-    border: 1px solid gray;
-    border-radius: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
 }
 
 input:focus {
-    outline: 0;
+  outline: 0;
+}
+
+.footer {
+  background-color: bisque;
+  display: grid;
+  grid-template-columns: 1fr 1fr 4fr;
+  margin-top: 40px;
 }
