@@ -34,9 +34,9 @@ module.exports = withPlugins([
       interlaced: true,
       optimizationLevel: 3,
     },
-    svgo: {
-      // enable/disable svgo plugins here
-    },
+    // svgo: {
+    //  // enable/disable svgo plugins here
+    // },
     webp: {
       preset: 'default',
       quality: 75,
