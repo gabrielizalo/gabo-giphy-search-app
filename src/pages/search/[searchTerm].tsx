@@ -4,13 +4,13 @@ import {useRouter} from "next/router";
 
 import Footer from "../../components/common/footer/footer";
 
-export default function Search(initialData) {
+export default function Search(initialData: any) {
     const router = useRouter();
     const userSearchTerm = (router.query.searchTerm as string).trim();
     const metaDescription = userSearchTerm.length > 0
         && initialData?.giphys
         && initialData.giphys.length > 0
-        && initialData.giphys.map((each, index) => each.title + " ");
+        && initialData.giphys.map((each: any) => each.title + " ");
     return (
         <>
             <div className="container">
@@ -25,7 +25,7 @@ export default function Search(initialData) {
                 <h1>Search results for: {userSearchTerm}</h1>
                 <div className="giphy-search-results-grid">
                     {
-                        initialData?.giphys && initialData.giphys.length > 0 && initialData.giphys.map((each, index) => {
+                        initialData?.giphys && initialData.giphys.length > 0 && initialData.giphys.map((each: any, index: number) => {
                             return (
                                 <div key={index}>
                                     <h3>{each.title}</h3>
@@ -41,10 +41,10 @@ export default function Search(initialData) {
     )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: any) {
     const apiKey = process.env.GIPHY_API_KEY
     const searchTerm = context.query.searchTerm;
-    let giphys = await fetch(`https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${apiKey}&limit=6`);
+    let giphys: any = await fetch(`https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${apiKey}&limit=6`);
     giphys = await giphys.json();
     return {props: {giphys: giphys.data}}
 }

@@ -1,12 +1,19 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from "next/link";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import Footer from "../components/common/footer/footer";
 
 export default function Home(initialData: any) {
-    const [formInputs, setFormInputs] = useState({});
+    type formInputsType = {
+        searchTerm: string;
+    };
+    const formInputsBase: formInputsType = {
+        searchTerm: ""
+    }
+
+    const [formInputs, setFormInputs] = useState(formInputsBase);
     const [searchResults, setSearchResults] = useState([]);
     const [searchTerm, setSearchTerm] = useState("cats");
 
@@ -19,10 +26,11 @@ export default function Home(initialData: any) {
         setFormInputs({...formInputs, [name]: value});
     }
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event: any) => {
         event.preventDefault();
         const apiKey = process.env.NEXT_PUBLIC_GIPHY_API_KEY
-        let giphys = await fetch(`https://api.giphy.com/v1/gifs/search?q=${formInputs.searchTerm}&api_key=${apiKey}&limit=6`);
+        let giphys: any =
+            await fetch(`https://api.giphy.com/v1/gifs/search?q=${formInputs.searchTerm}&api_key=${apiKey}&limit=6`);
         giphys = await giphys.json();
         console.log("giphys: ", giphys);
         setSearchTerm(formInputs.searchTerm);
@@ -59,7 +67,7 @@ export default function Home(initialData: any) {
                 </p>
 
                 <div className="giphy-search-results-grid">
-                    {searchResults && searchResults.length > 0 && searchResults.map((each, index) => {
+                    {searchResults && searchResults.length > 0 && searchResults.map((each: any, index: number) => {
                         return (
                             <div key={index}>
                                 <h3>{each.title}</h3>
