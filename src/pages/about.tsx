@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Footer from "../components/common/footer/footer";
+import React from "react";
 
 export default function About() {
     return (
@@ -10,9 +11,15 @@ export default function About() {
                     <title>Gabo&apos;s Giphy Search App</title>
                     <meta name="description"
                           content="Love giphys? We do too. Use our advanced giphy search to find the perfect giphy for any occation."></meta>
-
-                    <link rel="icon" href="/favicon.ico"/>
                     <link rel="stylesheet" href="/styles.css"/>
+
+                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+                    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+                    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+                    <link rel="manifest" href="/site.webmanifest"/>
+                    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+                    <meta name="msapplication-TileColor" content="#2d89ef"/>
+                    <meta name="theme-color" content="#ffffff"/>
                 </Head>
                 <h1>About</h1>
 
